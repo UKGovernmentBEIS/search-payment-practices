@@ -44,6 +44,10 @@ class HomeController @Inject()(
     Ok(page(pageTitle)(views.html.maintenance()))
   }
 
+  def cookies = Action { implicit request =>
+    Ok(page(pageTitle)(views.html.cookies()))
+  }
+
   /**
     * See https://www.gov.uk/service-manual/technology/managing-domain-names#using-robotstxt-and-root-level-redirections
     */
