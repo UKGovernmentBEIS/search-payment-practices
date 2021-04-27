@@ -85,6 +85,9 @@
       }
     }
     window.GOVUK.setCookie('cookies_policy', JSON.stringify(cookieConsent), { days: 365 });
+    if (document.location.protocol === 'https:') {
+        document.cookie += '; Secure';
+    }
     window.GOVUK.showConfirmationMessage(options.analytics);
   };
 
@@ -135,7 +138,7 @@
         cookieString = cookieString + '; expires=' + date.toGMTString();
       }
       if (document.location.protocol === 'https:') {
-        cookieString = cookieString + '; Secure';
+        cookieString = cookieString + ';Secure';
       }
       document.cookie = cookieString;
     }
@@ -240,7 +243,7 @@
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-                ga('create', 'UA-XXXXX-Y', 'auto');
+                ga('create', 'UA-93179138-1', 'auto');
                 ga('send', 'pageview');
 
         } else if (cookieAnalyticsDecline.checked) {
